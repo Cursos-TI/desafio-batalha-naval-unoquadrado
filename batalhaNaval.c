@@ -1,5 +1,6 @@
 #include <stdio.h> 
-  int main() {
+
+int main() {
 
     char coluna[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
     int i, j;
@@ -11,13 +12,25 @@
         }
     }
         
-    //preenchendo lugares no tabuleiro com loop for
-        for(i = 3; i <= 5; i++) {
-            tabuleiro[2][i] = 3;
-        }      
+    //preenchendo lugares  com loop for horizontal e vertical
+        for(i = 1; i <= 3; i++) {
+            tabuleiro[5][i] = 3;
+        }    
         
        for(j = 5; j <= 7; j++) {
             tabuleiro[j][7] = 3;
+       }
+
+      
+
+       //preenchendo nas diagonais com loop for
+
+       for(i = 0; i < 3; i++) {
+            tabuleiro[i][i] = 3;
+       }
+
+       for(j = 0; j < 3; j++ ) {
+            tabuleiro[j][9 - j] = 3;
        }
         
         printf("TABULEIRO BATALHA NAVAL\n");
@@ -28,6 +41,7 @@
             
         } printf("\n");
 
+
         for(i = 0; i < 10; i++) {
             printf(" %2d ", i + 1);
                 for(j = 0; j < 10; j++) {
@@ -37,10 +51,6 @@
         }
 
             
-            
-        
-
-
 
         return 0;
   }
